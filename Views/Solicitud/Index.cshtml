@@ -1,0 +1,63 @@
+@model PC3_PROGRA.Models.Producto;
+
+@{
+    ViewData["Title"] = "Solicitud de compra";
+}
+
+<div class="text-center" style="margin-bottom: 3vw;">
+    <h1 class="display-4" style="font-style: italic; font-weight: bold;">Solicitud de compra</h1>
+</div>
+<div class="row"> 
+    <div class="col-md-4"></div> 
+    <div class="col-md-4" style="box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);">
+        <form asp-action="Registrar" asp-controller="Solicitud" class="needs-validation" novalidate>
+            <div asp-asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="name">Nombre del producto</label>
+                <input type="text" class="form-control" asp-for="name" placeholder="Ingrese el nombre del producto" required/>
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="description">Descripcion</label>
+                <input type="text" class="form-control" asp-for="description" placeholder="Ingrese la descripcion del producto" id="Desc" required/>
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="price">Precio</label>
+                <input type="number" class="form-control" asp-for="price" placeholder="Ingrese el precio del producto" id="Price" required/>
+                <span asp-validation-for="price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="phone">Celular de contacto</label>
+                <input type="text" class="form-control" asp-for="phone" placeholder="Ingrese un celular de contacto" id="Phone" required/>
+                <span asp-validation-for="phone" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="place">Lugar de compra</label>
+                <input type="text" class="form-control" asp-for="place" placeholder="Ingrese el lugar de compra" id="Place" required/>
+                <span asp-validation-for="place" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="userName">Nombre de usuario</label>
+                <input type="text" class="form-control" asp-for="userName" placeholder="Ingrese el nombre del usuario" id="User" required/>
+                <span asp-validation-for="userName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="picURL">Imagen del producto</label>
+                <input type="file" asp-for="picURL" for="pic" required/>
+                <span asp-validation-for="picURL" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Registrar</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
